@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Rihanna ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ff9ecf, #ffcce6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.envelope {
+  width: 280px;
+  height: 200px;
+  background: #ff4d88;
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: 0.6s;
+}
+
+.envelope:before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 100px solid #ff4d88;
+  transition: 0.6s;
+}
+
+.letter {
+  position: absolute;
+  background: white;
+  width: 95%;
+  height: 95%;
+  top: 2.5%;
+  left: 2.5%;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: 1s;
+  overflow-y: auto;
+}
+
+.photo-container {
+  position: relative;
+}
+
+.photo-container img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.photo-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.signature {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff4d88;
+}
+
+.open .letter {
+  opacity: 1;
+}
+
+.open:before {
+  transform: rotateX(180deg);
+}
+
+.hearts {
+  position: absolute;
+  font-size: 22px;
+  animation: float 5s infinite linear;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-800px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="letter">
+
+    <div class="photo-container">
+      <img src="https://i.ibb.co/PGCPGYY2/DSCF0752.jpg">
+      <div class="photo-text">
+        You are my favorite chapter in this life 🤍
+      </div>
+    </div>
+
+    <h2>Happy Valentine’s Day Rihanna ❤️</h2>
+
+    <p>
+    I said remember this moment…<br><br>
+
+    One day we’ll look back at this distance  
+    and smile because we made it through.<br><br>
+
+    Even when we’re far apart,  
+    you are still my comfort,  
+    my happiness,  
+    and my peace.<br><br>
+
+    You are not just someone I love.  
+    You are someone I choose — every single day.<br><br>
+
+    Distance means nothing  
+    when someone means everything.<br><br>
+
+    I love you endlessly.
+    </p>
+
+    <div class="signature">
+    – Ikzaz 🤍
+    </div>
+
+  </div>
+</div>
+
+<iframe id="player"
+width="0"
+height="0"
+src=""
+allow="autoplay">
+</iframe>
+
+<script>
+function openEnvelope(el) {
+  el.classList.add("open");
+  createHearts();
+  playMusic();
+}
+
+function createHearts() {
+  for(let i = 0; i < 40; i++) {
+    let heart = document.createElement("div");
+    heart.className = "hearts";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+  }
+}
+
+function playMusic() {
+  var iframe = document.getElementById("player");
+  iframe.src = "https://www.youtube.com/embed/F5TMU6916U8?autoplay=1&playsinline=1";
+}
+</script>
+
+</body>
+</html>
