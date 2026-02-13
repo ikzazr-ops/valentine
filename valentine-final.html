@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ff9ecf, #ffcce6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.envelope {
+  width: 280px;
+  height: 200px;
+  background: #ff4d88;
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: 0.6s;
+}
+
+.envelope:before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 100px solid #ff4d88;
+  transition: 0.6s;
+}
+
+.letter {
+  position: absolute;
+  background: white;
+  width: 95%;
+  height: 95%;
+  top: 2.5%;
+  left: 2.5%;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: 1s;
+  overflow-y: auto;
+}
+
+.photo-container {
+  position: relative;
+}
+
+.photo-container img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.photo-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.signature {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff4d88;
+}
+
+.open .letter {
+  opacity: 1;
+}
+
+.open:before {
+  transform: rotateX(180deg);
+}
+
+.hearts {
+  position: absolute;
+  font-size: 22px;
+  animation: float 5s infinite linear;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-800px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="letter">
+
+    <div class="photo-container">
+      <img src="https://i.ibb.co/PGCPGYY2/DSCF0752.jpg">
+      <div class="photo-text">
+        No matter the distance, I still choose you 🤍
+      </div>
+    </div>
+
+    <h2>Happy Valentine’s Day Rihanna ❤️</h2>
+
+    <p>
+    Lately, we haven’t been talking as much as we used to.  
+    It doesn’t feel the same, and I know the main reason for that is me.<br><br>
+
+    And for that… I’m really, truly sorry.<br><br>
+
+    I’m sorry for the times I made you feel unheard.  
+    Sorry if I ever made you feel unimportant.  
+    Sorry for the moments where I didn’t show up the way I should have.<br><br>
+
+    You never deserved that.<br><br>
+
+    But even with all of that, one thing has never changed —  
+    I love you.<br><br>
+
+    Not just when things are easy.  
+    Not just when we’re laughing.  
+    But even through the quiet moments and the difficult ones.<br><br>
+
+    You mean more to me than I always know how to express.<br><br>
+
+    I don’t want distance, misunderstandings, or my own mistakes  
+    to slowly push us apart.<br><br>
+
+    I want to grow with you.  
+    I want to learn from my mistakes.  
+    I want to become better for you — and for us.<br><br>
+
+    Because when I think about my future…  
+    you’re there.<br><br>
+
+    And I don’t just want to be with you for now.  
+    I want to stay with you for as long as life allows us to.<br><br>
+
+    Forever isn’t just a word to me when it comes to you.<br><br>
+
+    So today, even if we’re not perfect,  
+    even if we’re still figuring things out —<br><br>
+
+    Happy Valentine’s Day to the girl I love.<br><br>
+
+    I’m sorry.  
+    And I choose you.
+    </p>
+
+    <div class="signature">
+    – Ikzaz 🤍
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openEnvelope(el) {
+  el.classList.add("open");
+  createHearts();
+  window.open("https://youtu.be/F5TMU6916U8", "_blank");
+}
+
+function createHearts() {
+  for(let i = 0; i < 40; i++) {
+    let heart = document.createElement("div");
+    heart.className = "hearts";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+  }
+}
+</script>
+
+</body>
+</html>
